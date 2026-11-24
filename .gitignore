@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+# Freddie Mac loan data: large and licensed, download from Clarity
+data/raw/
+data/processed/
+data/fre-crt-*/
+*.parquet
+*.zip
+# local working notes
+CLAUDE.md
