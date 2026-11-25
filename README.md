@@ -46,7 +46,9 @@ Also used: the [FHFA House Price Index](https://www.fhfa.gov/data/hpi) by 3-digi
 | COVID relief (forbearance) | 10,864 | 8.0% |
 | Defaulted | 902 | 0.66% |
 
-**4. Origination-only features.** Models use only what is known when the loan is priced. The refreshed credit score and current LTV are left out: they're measured after origination, and an insurer prices at origination.
+**4. Origination-only features.** Every test and model uses only what is known when the loan is priced. The refreshed credit score (`upd_fico1`) and current LTV are excluded from all of them, for two reasons:
+- **Consistency:** an insurer prices at origination, so every section answers the same question: what could have been known on day one?
+- **A fair comparison:** the refreshed score largely reflects how consistently a borrower paid *before* COVID. Steady payers score high almost by definition, so comparing groups on it partly restates the outcome instead of explaining it. (It isn't time leakage: the value is from Feb 2020, before the outcome window.)
 
 **5. Three lenses.**
 - **Significance tests:** Mann-Whitney (numeric) and chi-square (categorical), Bonferroni-corrected, with effect sizes.
