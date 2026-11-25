@@ -34,7 +34,7 @@ Also used: the [FHFA House Price Index](https://www.fhfa.gov/data/hpi) by 3-digi
 
 ## Method
 
-**1. Pipeline.** [`load_lld.py`](load_lld.py) reads the raw monthly files (pipe-delimited, no header, 88-93 columns), names columns by position, turns 999/9999 codes into missing values, removes duplicates, estimates the loss on loans that ended badly, and writes one parquet table. Column reference: [`docs/loans_monthly.md`](docs/loans_monthly.md).
+**1. Data preparation (manual, one-time).** This is not an automated pipeline. The monthly files are downloaded by hand from Freddie Mac Clarity (one zip per deal per period) and unzipped with 7-Zip into `data/raw/`. The Python script [`load_lld.py`](load_lld.py) is then run once to combine all 70 monthly files into a single table: it names the columns (the files have no header), turns 999/9999 placeholder codes into missing values, removes duplicate rows, and estimates the loss on loans that ended badly. The notebook reads that combined table. Column reference: [`docs/loans_monthly.md`](docs/loans_monthly.md).
 
 **2. Cohort.** Loans that were active and current in Feb 2020, watched for 12 months (Mar 2020 to Feb 2021). Paid-off loans are dropped so they don't count as false "never defaulted".
 
@@ -89,7 +89,7 @@ Raw and processed loan data are not included in this repo. Download them from Fr
 ## Repo layout
 
 ```
-load_lld.py                       raw monthly files -> one parquet table
+load_lld.py                       one-time script: combines the downloaded monthly files into one table
 notebooks/01_explore_data.ipynb   exploration, tests and models
 docs/loans_monthly.md             column reference for the processed table
 data/                             house price index and ZIP3 -> state map
