@@ -8,14 +8,13 @@ Which pre-COVID mortgages went bad once COVID hit, and how much was lost? This p
 Expected loss = Probability of default × Loss given default × Exposure
 ```
 
-**Slides:** [methodology deck](https://claude.ai/artifact/4Sx9CWwsvKyNrYrQciZuTn) (13 slides, plain-language walkthrough with speaker notes).
 
-## In plain English
+## The Study
 
 - **The loans:** about 169,000 mortgages where the buyer put down less than 20%, the kind that needs mortgage insurance.
 - **The question:** when COVID hit, who stopped paying, and could a lender have seen it coming on the day the loan was made?
-- **The twist:** in 2020 many borrowers got an approved payment pause (forbearance), but the data still marks them as late. Counting them as defaults would be wrong, so a default here means 3+ months behind *without* an approved pause. That cuts 7,810 "defaults" down to 902.
-- **The answer so far:** a household's income cushion (a second borrower, less debt compared to income, a smaller loan) predicted COVID defaults about as well as credit score did. House prices didn't matter much, because they rose almost everywhere.
+- **To consider:** in 2020 many borrowers got an approved payment pause (forbearance), but the data still marks them as late. Counting them as defaults would be wrong, so a default here means 3+ months behind *without* an approved pause. That cuts 7,810 "defaults" down to 902.
+- **Findings so far:** a household's income cushion (a second borrower, less debt compared to income, a smaller loan) predicted COVID defaults about as well as credit score did. House prices didn't matter much, because they rose almost everywhere.
 
 ## Data
 
